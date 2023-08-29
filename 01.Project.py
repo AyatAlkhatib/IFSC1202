@@ -1,10 +1,13 @@
+#x represents years
+#y represents weeks 
+#z reprsents days
 Value =int(input("Enter Length of Time in days:"))
-years= Value//365
-print("years:",years)
-weeks=(Value//365)*52
-print("weeks:", weeks)
+x= Value//365
+print("x:",x)
+y=(Value//365)*52
+print("y:", y)
 days= (Value%365)%7
-print("days:", days)
+print("z:", z)
 
 
 
