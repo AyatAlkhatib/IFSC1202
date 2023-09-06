@@ -13,5 +13,5 @@ B=float(input("Enter side 2: "))
 C=float(input("Enter side 3: "))
 P= float(A + B + C)                           #Calculate Perimeter is Adding all three sides 
 S= float(P/2)                                 #Calculate Semiperimeter by diving the results of the perimeter by 2 since we want half of P
-area= float(S*(S-A)*(S-B)*(S-C))**0.5  #Calculate area by multiplying the the result S by the out comes of S minus the three sides then mulitplaying it by 0.5 #in this context 0.5 is equalivelnt to taking a squre root
-print ("area:",area)                    #the area must be float form 
+area= float(S*(S-A)*(S-B)*(S-C))**0.5         #Calculate the squre root by multiplying the reults of S by the out comes of the results of S minus the sides thento the squre root of 0.5 #in this context 0.5 is equvalient to squre rooting. 
+print ("area:", area)                    #the area must be float form 
