@@ -1,7 +1,12 @@
 N= int(input("Enter Start of Range:"))
 N2= int(input("Enter End of Range: "))
-for i in range (N,N2//2, +1):
-    print("Prime Numbers between 50 and 100:" , i)
+P= ("Prime Numbers between N and N2: ")
+for i in range (N,N2//2 , +1):
+    if i > 1: 
+        prime = True
+         
+        
+    
 
 
 
