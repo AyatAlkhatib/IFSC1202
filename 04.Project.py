@@ -5,6 +5,7 @@
 # i reprsents the equation we are using to figure our prime numbers 
 # we will need a break when if moldues n of i is equal to zero 
 # if it doesn't equal to zero then its a prime number
+
 a= int(input("Enter Start of Range: "))             
 b= int(input("Enter End of Range: "))
 c= (input ("Prime Numbers between 50 and 100"))
