@@ -1,11 +1,11 @@
 a= (input("Enter Start Of Range: "))
 b= (input("Enter End Of Range: "))
 c= (input("Special Numbers between 1 and 10000"))
-number_of_digits = 0
+digits_num = 0
 for I in range (a,b+1):
     N=I
-    while N>0 
-    number_of_digits= + 1 
+    while N>0: 
+    digits_num = digits_num + 1 
     results = 0 
 if N>0: 
     digits= N % 10
