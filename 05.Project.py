@@ -1,6 +1,6 @@
-a= (input("Enter Start Of Range: "))
-b= (input("Enter End Of Range: "))
-print ("Super Special Numbers between", a, "and", b)
+a= int(input("Enter Start Of Range: "))
+b= int(input("Enter End Of Range: "))
+print ("Special Numbers between", a, "and", b)
 for i in range (a, b + 1): 
     n=i
     length = 0 
