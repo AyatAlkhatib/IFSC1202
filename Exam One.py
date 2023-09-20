@@ -11,7 +11,7 @@ for i in range (a, b + 1):
     results = 0 
     while n > 0:
         digits= n % 10
-        results = results + digits** length
+        results = digits** length + results
         n= n // 10
     
     if results == i:
