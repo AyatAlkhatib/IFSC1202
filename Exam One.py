@@ -12,11 +12,11 @@ for i in range (a, b + 1):
 
 # compute factorial of digits
         prod = 1
-        for  j in range (1, digits +1):
+        for  j in range (1, digits +1):                          # we are calcuating the factorial
             prod = prod * j
 
 
-        results = results + prod
+        results = results + prod                                 
         n= n // 10 
     
     if results == i: 
