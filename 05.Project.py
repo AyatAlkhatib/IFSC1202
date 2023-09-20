@@ -1,6 +1,6 @@
-a= int(input("Enter Start Of Range: "))
-b= int(input("Enter End Of Range: "))
-print ("Special Numbers between", a, "and", b)
+a= int(input("Enter Start Of Range: "))                                 # a representing the start value
+b= int(input("Enter End Of Range: "))                                    #b representing the end value
+print ("Special Numbers between", a, "and", b)                          # the "and" represents the spac between the start value and end value
 for i in range (a, b + 1): 
     n=i
     length = 0                             # we want the length to calculate power of the digits 
