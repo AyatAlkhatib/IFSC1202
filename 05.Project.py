@@ -2,7 +2,7 @@ a= (input("Enter Start Of Range: "))
 b= (input("Enter End Of Range: "))
 print("Super Special Numbers between:, a, "and", b")
 for i in range (a, b + 1): 
-    n=i 
+    n=i
     length= 0 
     while n > 0:
         n= n//10
