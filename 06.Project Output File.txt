@@ -3,3 +3,6 @@ Welcome to 06.Project Input File.txt
 **Insert Merge File Here**
 This file is for testing purposes.
 Good Luck!
+#Insert Merge File Here 
+This is line 1 of the merge file
+This is line 2 of the merge file
