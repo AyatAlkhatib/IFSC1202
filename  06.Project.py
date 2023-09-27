@@ -9,5 +9,7 @@ outputfile = open("06.Project Output File.txt", "w")
 inputrecords = 0
 outputrecords= 0 
 mergerecords = 0
-
-
+#Read the first line of the input file
+for line in the inputfile: 
+    inputrecords +=1
+    if ""
