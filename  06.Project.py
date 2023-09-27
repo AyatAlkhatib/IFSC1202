@@ -13,11 +13,12 @@ for line in inputfile:
     inputrecords +=1
     if "**Insert Merge File Here**":
         mergefile = open ("06.Project Merge File.txt")
-        for line in mergefile: 
-            mergerecords +=1 
-            for line in outputfile: 
-                if "**Insert Merge File Here**": 
-                    outputrecords +=1 
+for line in mergefile: 
+     mergerecords +=1 
+for line in outputfile: 
+    if "**Insert Merge File Here**":  
+        outputrecords +=1 
+
 inputfile.close 
 outputfile.close
 
