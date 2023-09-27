@@ -1,0 +1,6 @@
+Hello! 
+Welcome to 06.Project Input File.txt
+"06.Project Merge File.txt"
+This file is for testing purposes.
+Good Luck!
+
