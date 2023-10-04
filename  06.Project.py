@@ -6,24 +6,23 @@ mergerecords = 0
 line= inputfile.readline()
 while line !="":
     if line == "**Insert Merge File Here**":
-        mergefile = open ("06.Project Merge File.txt", "r")
-while mergefile !="":
-     outputfile.write(mergefile) 
-     outputrecords +=1 
-     mergefile.close()
+        mergefilename = open ("06.Project Merge File.txt", "r")
+        mergefile= mergefilename.readline()
+        while mergefile !="":
+           outputfile.write(mergefile)  
+        outputrecords +=1 
+        mergefilename.close()
     else: 
-     outputfile.write(line)
-     outputrecords +=1 
-     inputrecords +=1
+       outputfile.write(line)
+       outputrecords +=1 
+       inputrecords +=1
     line = inputfile.readline()
 inputfile.close()
 outputfile.close() 
+print(inputrecords, "Input File Records")
+print(outputrecords, "Output File Records")
+print(mergerecords, "Merge File Records")
 
-
-
-print ({inputrecords}, inputfile)
-print({mergerecords}, mergefile)
-print ({outputrecords}, outputfile)
 
 
 
