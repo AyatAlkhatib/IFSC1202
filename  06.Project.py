@@ -14,7 +14,7 @@ while line !="":
         while mergefilename !="":
            outputfile.write(mergefilename)  
            outputrecords +=1 
-        outputfile.write("/n")
+        outputfile.write("\n")
         mergefile.close()
     else: 
        outputfile.write(line)
