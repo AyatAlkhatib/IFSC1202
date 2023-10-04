@@ -11,15 +11,15 @@ while line !="":
     if line == "**Insert Merge File Here**":
         mergefile = open ("06.Project Merge File.txt", "r")
         mergefilename= mergefile.readline()
-        while mergefile !="":
+        while mergefilename !="":
            outputfile.write(mergefilename)  
            outputrecords +=1 
         outputfile.write("/n")
         mergefile.close()
     else: 
        outputfile.write(line)
-       outputrecords +=1 
-       inputrecords +=1
+       outputrecords += 1 
+       inputrecords += 1
     line = inputfile.readline()
 # Close all the Files
 inputfile.close()
