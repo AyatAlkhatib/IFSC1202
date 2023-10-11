@@ -24,8 +24,8 @@ def DDMMSStoDecimal (Degrees, Minutes, Seconds):
 
 
 #read the inputfile and write outputfile 
-inputfile = open("07.Project Angles Input.txt", "r")
-outputile = open ("07.Project Angles Output.txt", "w")
+inputfile = open("07.Project Angles Input.txt", "r")                       #we want to read the file for the input 
+outputile = open ("07.Project Angles Output.txt", "w")                      # we want to write in our output file from what we have read from the input file 
 records_processed = 0                                        #the starting records for the file will be 0 
 
 for line in inputfile:
@@ -35,9 +35,10 @@ for line in inputfile:
         Degree_Decimal= DDMMSStoDecimal (Degrees, Minutes, Seconds)
         outputile.write(str(Degree_Decimal) + "\n")                        #\n is because we want a newline 
         records_processed +=1                                               
-   
-inputfile.close()
+#close both files 
+inputfile.close()                                            
 outputile.close()
+# print out the records for the solution 
 print(records_processed, "Records Processed") 
 
 
