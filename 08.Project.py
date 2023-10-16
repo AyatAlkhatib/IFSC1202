@@ -2,15 +2,15 @@
 # Read the Constitution from the internet 
 import requests
 def read_Constitution(): 
- response = requests.get("https://www.usconstitution.net/const.txt")
+ response = requests.get("https://www.usconstitution.net/const.txt")           # we want to import the link into a request to read
  return response.text
  
 # read the Constitution 
 Constitution_line = read_Constitution()
-# Split the string by newline character into a list
+# Split the string by newline character into a list                            # we want to so split inot new lines
 Constitution_linelist = Constitution_line.split("\n")
 # find the revelent section 
-def find_sections(search_term, Constitution_line):
+def find_sections(search_term, Constitution_line):                          # search term is for seaching the word needed for the code to run the relevant sections
  found = False
  section_current = []
 
@@ -39,7 +39,7 @@ def find_sections(search_term, Constitution_line):
     if found: 
      print("\n".join(section_current))
 
-if __name__== "--Main--": 
+if __name__ == "__main__":
  while True:
   search_term = input("Enter search term (blank to exit): ").strip()
   if not search_term:
