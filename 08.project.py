@@ -32,9 +32,6 @@ def find_sections(search_term, Constitution_line):                          # se
     while end_line < len(Constitution_line) - 1 and Constitution_line[end_line+1].strip() != "":
      end_line +=1
     
-    # we want to display the sections 
-    for i in range (start_line, end_line +1 ):
-     section_current.append(f"Line {i + 1}: {Constitution_line[i]}")
 
     if found: 
      print("\n".join(section_current))
@@ -58,4 +55,3 @@ if __name__ == "__main__":
       break
 
   find_sections(search_term, Constitution_linelist) 
-
