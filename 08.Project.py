@@ -1,60 +1,28 @@
-  # a python solution that reads the US Constitution, prompts for a search term, then displays the relevant sections.
+# a python solution that reads the US Constitution, prompts for a search term, then displays the relevant sections.
 # Read the Constitution from the internet 
-import requests
-def read_Constitution(): 
- response = requests.get("https://www.usconstitution.net/const.txt")           # we want to import the link into a request to read
- return response.text
- 
-# read the Constitution 
-Constitution_line = read_Constitution()
-# Split the string by newline character into a list                            # we want to so split inot new lines
-Constitution_linelist = Constitution_line.split("\n")
-# find the revelent section 
-def find_sections(search_term, Constitution_line):                          # search term is for seaching the word needed for the code to run the relevant sections
- found = False
- section_current = []
+import requests 
+response = requests.get("https://www.usconstitution.net/const.txt")           # we want to import the link into a request to read
+Constitutionstring = response.text
 
- for num_line, line in enumerate (Constitution_line):
-  if search_term.lower() in line.lower():
-   if not found:
-    print(f"Found in the US Constitution:\n")
-    found = True
+Constitutionstring_list = Constitutionstring.split("\n") 
+search_term = input("Enter search term: ") 
 
-    print(f"line {num_line+1}:\n{line}")
-    start_line= num_line
-    end_line = num_line
-
-    # we want to find the start of the section 
-    while start_line > 0 and Constitution_line[start_line-1].strip() != "":
-     start_line -=1 
-
-    # we want to find the end of the section 
-    while end_line < len(Constitution_line) - 1 and Constitution_line[end_line+1].strip() != "":
-     end_line +=1
-    
-    # we want to display the sections 
-    for i in range (start_line, end_line +1 ):
-     section_current.append(f"Line {i + 1}: {Constitution_line[i]}")
-
-    if found: 
-     print("\n".join(section_current))
-     for j in range(num_line, 0, -1):
-        if Constitution_linelist[j] == "":
-            start_line = j
-            break
-
-    for j in range(num_line, len(Constitution_linelist)):
-        if Constitution_linelist[j] == "":
+start_line = 0 
+end_line = 1 
+while search_term != "": 
+  for i in range (len(Constitutionstring_list)):
+    if Constitutionstring_list[i].find(search_term) != -1: 
+      for j in range(i, 0, -1):
+         if Constitutionstring_list[j] == "":
+           start_line = j
+           break
+      for j in range(i, len(Constitutionstring_list), +1):
+         if Constitutionstring_list[j] == "":
             end_line = j + 1
             break
+      for j in range(start_line, end_line):
+        print()
+        i = end_line
+             
 
-    for j in range(start_line, end_line):
-      print("Line ", j, ": ",Constitution_linelist[j])
-      
-if __name__ == "__main__":
- while True:
-  search_term = input("Enter search term (blank to exit): ").strip()
-  if not search_term:
-      break
 
-  find_sections(search_term, Constitution_linelist) 
