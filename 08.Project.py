@@ -1,4 +1,4 @@
-# a python solution that reads the US Constitution, prompts for a search term, then displays the relevant sections.
+  # a python solution that reads the US Constitution, prompts for a search term, then displays the relevant sections.
 # Read the Constitution from the internet 
 import requests
 def read_Constitution(): 
@@ -34,11 +34,23 @@ def find_sections(search_term, Constitution_line):                          # se
     
     # we want to display the sections 
     for i in range (start_line, end_line +1 ):
-     section_current.append(f"Line {i + 1}:\n{Constitution_line[i]}")
+     section_current.append(f"Line {i + 1}: {Constitution_line[i]}")
 
     if found: 
      print("\n".join(section_current))
+     for j in range(num_line, 0, -1):
+        if Constitution_linelist[j] == "":
+            start_line = j
+            break
 
+    for j in range(num_line, len(Constitution_linelist)):
+        if Constitution_linelist[j] == "":
+            end_line = j + 1
+            break
+
+    for j in range(start_line, end_line):
+      print("Line ", j, ": ",Constitution_linelist[j])
+      
 if __name__ == "__main__":
  while True:
   search_term = input("Enter search term (blank to exit): ").strip()
