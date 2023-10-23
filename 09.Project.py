@@ -38,6 +38,6 @@ if index_to_city is None:
 #If both cities where found 
 if index_from_city is not None and index_to_city is not None:
     distance = distance_information[index_from_city][index_to_city]
-    print(f"{from_city} to {to_city} - {distance} Miles")
+    print(from_city, "to" , to_city, "-", f"{index_from_city}{index_to_city}" "miles")
 
 
