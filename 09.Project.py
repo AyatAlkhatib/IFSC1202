@@ -1,43 +1,25 @@
-import csv
-
-# read the input distance provided in the cvs.file 
-with open("09.Project Distances.csv", newline='') as distancecsv: 
-    distance_information = list(csv.reader(distancecsv))
-
-# display the cvs file table into rows 
-for row in distance_information:
-    print("\t".join(row))
-
-#Prompt for a From City
-from_city = input("Enter from city: ").strip()
-
-#Prompt to a city 
-to_city = input("Enter To City: ").strip()
-
-#where is the index of the column where the city 
-index_from_city = None
-for i, row in enumerate (distance_information): 
-    if from_city == row [0]: 
-        index_from_city = i 
-        break
-
-# find the index of the row 
-index_to_city = None
-if index_to_city is not None: 
-    for i, city in enumerate (distance_information[0]): 
-        if to_city == city: 
-            index_to_city = i 
-            break 
-
-# If the From City was not found
-if index_from_city is None: 
-    print("Invalid From City")
-if index_to_city is None: 
-    print("Invalid To City")
-
-#If both cities where found 
-if index_from_city is not None and index_to_city is not None:
-    distance = distance_information[index_from_city][index_to_city]
-    print(from_city, "to" , to_city, "-", f"{index_from_city}{index_to_city}" "miles")
-
-
+# Create the array
+a = []
+# Open the file and read the first line
+csvFile = open("09.Project Distances.csv")
+x = csvFile.readline(0).strip()
+# While not at end of file 
+while x != "":
+# Split the line into a list
+	y = x.split(" , ")
+# Convert the values from string to an integer
+	for i in range(len(y)):
+		y[i] = int(y[i])
+# Append the list to the two dimensional array
+	a.append(y)
+# Read the next line
+	x = csvFile.readline().strip()
+# Loop through each row in the two dimensional array
+for i in range(len(a)):
+# Loop though each element in the list
+    for j in range(len(a[i])):
+# Print each element in the list
+        print(a[i][j], end=' ')
+# End of list - go to next line
+    print()
+	
