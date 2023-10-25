@@ -9,7 +9,7 @@ x = csvfile.readline().strip()
 while x != "":
     # Split the line into a list
     y = x.split(",")                                # this will make the lines to be slipted since we need lists 
-    # we want the prices to be in floating number (we are going to assume that the property is 4)
+    # we want the prices to be in floating number (the property is 4)
     y[4] = float(y[4])
     # Append the list to the two-dimensional array 
     a.append(y)
@@ -22,7 +22,7 @@ csvfile.close()                              # after gathering the information w
 zipcodes = []
 
 # Create an empty two dimensional list called "zipcodes". Each row in list will contain:
-for property in a: 
+for property in a:                                       #Append the one dimensional list to a two dimensional list called "properties" that contains all of the data in
     zipcode_ = property[3]
     found = False
     for zipcode in zipcodes: 
@@ -34,7 +34,7 @@ for property in a:
     if not found: 
      zipcodes.append([zipcode_, 1, property[4]])           
 
-print("Zipcode   Count        Average")
+print("Zipcode Count Average")
 
 
 # Loop though each element in the list in the zipcode
