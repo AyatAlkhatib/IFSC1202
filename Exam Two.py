@@ -9,7 +9,7 @@ x = csvfile.readline().strip()
 while x != "":
     # Split the line into a list
     y = x.split(",")                                # this will make the lines to be slipted since we need lists 
-    # we want the prices to be in floating number (the property is 4)
+    # we want the prices to be in floating number (the property is 4 which is the last columns provided from 0-4)
     y[4] = float(y[4])
     # Append the list to the two-dimensional array 
     a.append(y)
@@ -34,7 +34,7 @@ for property in a:                                       #Append the one dimensi
     if not found: 
      zipcodes.append([zipcode_, 1, property[4]])           
 
-print("Zipcode Count Average")
+print("Zipcode Count  Average")
 
 
 # Loop though each element in the list in the zipcode
