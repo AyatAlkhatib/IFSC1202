@@ -6,10 +6,10 @@ x = csvFile.readline().strip()
 # While not at end of file 
 while x != "":
 # Split the line into a list
-	y = x.split(" , ")
+	y = x.split(",")
 # Convert the values from string to an integer
-	for i in range(len(y)):
-		y[i] = int(y[i])
+#	for i in range(len(y)):
+#		y[i] = int(y[i])
 # Append the list to the two dimensional array
 	a.append(y)
 # Read the next line
@@ -19,7 +19,8 @@ for i in range(len(a)):
 # Loop though each element in the list
     for j in range(len(a[i])):
 # Print each element in the list
-        print('{:>10}'.format(a[i][j]), end=' ')
+        print(
+              '{:>10}'.format(a[i][j]), end=' ')
 # End of list - go to next line
     print() 
 
@@ -33,7 +34,7 @@ to_city_row = 0
 
 for i in range(len(a)): 
       if a[i][0] == from_city:
-            from_city = i 
+            from_city_row = i 
             break 
 for i in range (len(a[0])):
       if a[0][i] == to_city: 
@@ -49,4 +50,4 @@ for i in range(len(a[0])):
             print("Invalid to City")
             break 
 #print 
-print(from_city, "to", to_city , "-", a[from_city_row][to_city_colum], "Miles")
+print(f"{from_city} to {to_city} - {a[from_city_row][to_city_colum]} Miles")
