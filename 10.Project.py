@@ -1,5 +1,6 @@
+
 # Step 1 - Create a class called "Student"
-Class Students(): 
+Class_Students():
 
 # Step 2 - Define the initializer, the initializer should accept the folloing class values
 def __init__(firstname, lastname, tnumber, scores): 
@@ -20,7 +21,35 @@ def RunningAverage(self):
 
 
 def TotalAverage(self): 
+    return sum(self.Grades) / len(self.Grades)
 
+def LetterGrade(self): 
+    if Average >= 90:
+        return 'A'
+    if 80 <= Average < 90: 
+        return 'B'
+    if 70 <= Average < 80:
+        return 'C'
+    if 60 <= Average < 70:
+        return 'D'
+    if Average < 60: 
+        return 'f'
+    
+# Step 5 - Create array 
+Students = []
 
+# Read File 
+StudentsFiles = open ("10.Project Student Scores.tx")
+for line in StudentsFiles:
+        data = line.strip().split(",")
+        firstname, lastname, tnumber, *scores = data
+        student = Students(firstname, lastname, tnumber, scores)
+        Students.append(student)
+
+#Print the attributes
+for student in Students: 
+    print(f"{student.FirstName} {student.LastName}'s Running Average: {student.RunningAverage()}")
+    print(f"{student.FirstName} {student.LastName}'s Total Average: {student.TotalAverage()}")
+    print(f"{student.FirstName} {student.LastName}'s Letter Grade: {student.LetterGrade()}")
 
 
