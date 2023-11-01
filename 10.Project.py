@@ -1,15 +1,13 @@
 
 # Step 1 - Create a class called "Student"
-Class_Students():
+class Students ():
 
-# Step 2 - Define the initializer, the initializer should accept the folloing class values
-def __init__(firstname, lastname, tnumber, scores): 
-
-# Step 3 - In the initializer, create the following object attributes
-self.FirstName = firstname
-self.LastName = lastname
-self.TNumber = tnumber 
-self.Grades = [int(scores) for score in scores] 
+# Step 2 - Define the initializer, the initializer should accept the folloing class values: 
+ def __init__(self, firstname, lastname, tnumber, scores): 
+     self.FirstName = firstname
+     self.LastName = lastname
+     self.TNumber = tnumber 
+     self.Grades = [int(score) if score.strip() else 0 for score in scores]
 
 # Step 4 - Define the methods for the object
 def RunningAverage(self): 
@@ -35,8 +33,11 @@ def LetterGrade(self):
     if Average < 60: 
         return 'f'
     
-# Step 5 - Create array 
-Students = []
+# Step 5 -  Create 4 instances of students
+mystudent1 = Students("Jim","Evans","T123456", 3)
+mystudent2 = Students("Joe","Smith","T654321", 4)
+mystudent3 = Students("Jane","Doe", "T121212",2)
+mystudent4 = Students()
 
 # Read File 
 StudentsFiles = open ("10.Project Student Scores.tx")
