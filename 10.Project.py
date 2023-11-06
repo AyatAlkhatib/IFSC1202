@@ -6,16 +6,16 @@ class Students ():
      self.FirstName = firstname
      self.LastName = lastname
      self.TNumber = tnumber 
-     self.Grades = [int(score) if score.strip() else 0 for score in scores]
+     self.Grade = [int(score) if score.strip() else 0 for score in scores]
  # Step 4 - Define the methods for the object
   def RunningAverage(self): 
-    RunningAverage = [scores for scores in self.Grades if scores != 0]
+    RunningAverage = [grade for grade in self.Grades if grade != 0]
     if RunningAverage: 
-        return sum(RunningAverage)/len(RunningAverage)
+        return sum(RunningAverage)/len(RunningAverage) 
     else: 
         return 0 
   def TotalAverage(self): 
-    return sum(self.Grades) / len(self.Grades)
+    return sum(self.Grade) / len(self.Grade)
   
   def LetterGrade(self): 
      Average = self.TotalAverage()
@@ -30,26 +30,28 @@ class Students ():
      if Average < 60: 
         return 'f'
     
-# Step 5 -  Create 4 instances of students
-mystudent1 = Students("Jim","Evans","T123456", [95, 0, 71])
-mystudent2 = Students("Joe","Smith","T654321", [90, 80, 85, 97])
-mystudent3 = Students("Jane","Doe", "T121212",[0, 100, 99])
+# Step 5 -  Create list
+student = []
 
-# create array 
-Students = [mystudent1, mystudent2, mystudent3]
 
 # Read File 
 StudentsFiles = open ("10.Project Student Scores.tx")
 for line in StudentsFiles:
+        x = StudentsFiles.readline().strip()
         data = line.strip().split(",")
         firstname, lastname, tnumber, *scores = data
-        student = Students(firstname, lastname, tnumber, scores(0))
+        students= x(firstname, lastname, tnumber, scores(0))
         Students.append(student)
 
-#Print the attributes
-for student in Students: 
-    print(f"{student.FirstName} {student.LastName}'s Running Average: {student.RunningAverage()}")
-    print(f"{student.FirstName} {student.LastName}'s Total Average: {student.TotalAverage()}")
-    print(f"{student.FirstName} {student.LastName}'s Letter Grade: {student.LetterGrade()}")
+# Print the header
+print(f"{'First Name':<12}{'Last Name':<12}{'ID':<12}{'Running':<12}{'Semester':<12}{'Letter':<12}")
+print(f"{'':<12}{'':<12}{'Number':<12}{'Average':<12}{'Average':<12}{'Grade':<12}")
+print("-" * 72)
 
+# Print student data
+for students in student:
+    running_avg = student.RunningAverage()
+    semester_avg = student.TotalAverage()
+    letter_grade = student.LetterGrade()
+    print(f"{student.FirstName} {student.LastName} {student.TNumber} {running_avg:} {semester_avg:} {letter_grade}")
 
