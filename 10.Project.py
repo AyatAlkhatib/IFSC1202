@@ -38,12 +38,13 @@ class Students ():
      return 'F'
     
 # Read File 
-StudentsFiles = open ("10.Project Student Scores.txt", "r")
+StudentsFiles = open ("10.Project Student Scores.txt", "r")                  #We going to call the file as StudentFiles 
 print("{:>12s} {:>12s} {:>12s} {:>12s} {:>12s} {:>12s}".format("First", "Last", "ID", "Running", "Semester", "Letter"))
 print("{:>12s} {:>12s} {:>12s} {:>12s} {:>12s} {:>12s}".format("Name", "Name", "Number", "Average" ,"Average", "Grade"))
 print("{:>12s} {:>12s} {:>12s} {:>12s} {:>12s} {:>12s}".format("-"*12, "-"*12, "-"*12 ,"-"*12, "-"*12, "-"*12 ))
 x= StudentsFiles.readline()   
 
+# we want to print everything out now
 while x != "": 
    y= x.split(",")
    Student = Students (y[0].strip(),y[1].strip(),y[2].strip(),y[3:])
