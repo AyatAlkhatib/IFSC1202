@@ -6,16 +6,23 @@ class Students ():
      self.FirstName = firstname
      self.LastName = lastname
      self.TNumber = tnumber 
-     self.Grade = [int(score) if score.strip() else 0 for score in scores]
+     self.Grade = scores
  # Step 4 - Define the methods for the object
   def RunningAverage(self): 
-    RunningAverage = [grade for grade in self.Grades if grade != 0]
-    if RunningAverage: 
-        return sum(RunningAverage)/len(RunningAverage) 
-    else: 
-        return 0 
+    total = 0 
+    count = 0 
+    for i in range (len(self.Grade)):
+       if self.Grade[i].strip()!=" ": 
+          total = total + float(self.Grade[i].strip())
+          count = count + 1 
+    return total / count  
   def TotalAverage(self): 
-    return sum(self.Grade) / len(self.Grade)
+    total = 0 
+    for i in range(len(self.Grade)):
+       if self.Grade[i].strip()!= "": 
+          total = total +float(self.Grade[i].strip())
+
+    return total / len(self.Grade)
   
   def LetterGrade(self): 
      Average = self.TotalAverage()
@@ -30,28 +37,15 @@ class Students ():
      if Average < 60: 
         return 'f'
     
-# Step 5 -  Create list
-student = []
-
-
 # Read File 
 StudentsFiles = open ("10.Project Student Scores.tx")
-for line in StudentsFiles:
-        x = StudentsFiles.readline().strip()
-        data = line.strip().split(",")
-        firstname, lastname, tnumber, *scores = data
-        students= x(firstname, lastname, tnumber, scores(0))
-        Students.append(student)
+print("({:>12s} {:>12s} {:>12} {:>12} {:>12} {:>12})".format("First" , "Last" , "ID" , "Running" , "Semster" , "Letter"))
+print("({:>12s} {:>12s} {:>12} {:>12} {:>12} {:>12})".format("Name"  , "Name" , "Number", "Average" ,"Average", "Grade"))
+print("({:>12s} {:>12s} {:>12} {:>12} {:>12} {:>12})".format("-"*12, "-"*12  , "-"*12   , "-"*12  ,  "-"*12  , "-"*12 ))
+x= StudentsFiles.readline()
 
-# Print the header
-print(f"{'First Name':<12}{'Last Name':<12}{'ID':<12}{'Running':<12}{'Semester':<12}{'Letter':<12}")
-print(f"{'':<12}{'':<12}{'Number':<12}{'Average':<12}{'Average':<12}{'Grade':<12}")
-print("-" * 72)
-
-# Print student data
-for students in student:
-    running_avg = student.RunningAverage()
-    semester_avg = student.TotalAverage()
-    letter_grade = student.LetterGrade()
-    print(f"{student.FirstName} {student.LastName} {student.TNumber} {running_avg:} {semester_avg:} {letter_grade}")
+while x != "": 
+   y=x.split(",")
+   Student = Students (y[0].strip(),y[1].strip(),y[2].strip(),y[3].strip())
+   print("({:>12s} {:>12s} {:>12} {:>12} {:>12} {:>12})".format(Students.FirstName, Students.LastName, Students.TNumber, Students.RunningAverage(), Students.TotalAverage(), Students.LetterGrade()))
 
